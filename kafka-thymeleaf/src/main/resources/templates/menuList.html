@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Person List</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Menu List</h1>
+      <a href="order">Order</a>
+      <br/><br/>
+      <div>
+         <table border="1">
+            <tr>
+               <th>Food</th>
+               <th>Drink</th>
+            </tr>
+            <tr th:each ="Menu : ${menus}">
+               <td th:utext="${Menu.food}">...</td>
+               <td th:utext="${Menu.drink}">...</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

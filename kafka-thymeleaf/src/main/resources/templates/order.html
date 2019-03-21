@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Add Person</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Place Order</h1>
+      
+          
+      <form th:action="@{/order}"
+         th:object="${menuForm}" method="POST">
+         Food:
+         <input type="text" th:field="*{food}" />    
+         <br/>
+         Drink:
+         <input type="text" th:field="*{drink}" />     
+         <br/>
+         <input type="submit" value="order" />
+      </form>
+       
+      <br/>
+       
+      <!-- Check if errorMessage is not null and not empty -->
+       
+      <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red;font-style:italic;">
+         ...
+      </div>
+       
+   </body>
+</html>
